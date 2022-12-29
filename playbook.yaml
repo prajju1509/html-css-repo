@@ -1,0 +1,20 @@
+- hosts: all
+  name: mini project
+  become: true
+  tasks:
+    - name: httpd
+      yum:
+        name: httpd
+        state: present
+    - name: start service
+      service:
+        name: httpd
+        state: started
+    - name: install git 
+      yum:
+        name: git
+        state: present
+    - name: git repo
+      git:
+        repo: https://github.com/prajju1509/html-css-repo.git
+        dest: /var/www/html/
