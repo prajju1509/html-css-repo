@@ -18,10 +18,6 @@
       git:
         repo: https://github.com/prajju1509/html-css-repo.git
         dest: /var/www/html/
-- hosts: all
-  name: mini project
-  become: true
-  tasks:
     - name: apache2
       apt:
         name: apache2
